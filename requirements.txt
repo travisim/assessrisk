@@ -4,7 +4,6 @@ Flask-Session
 requests
 gunicorn
 psycopg2
-tempfile 
 werkzeug.exceptions 
 werkzeug.security 
 time
