@@ -1,0 +1,13 @@
+       
+{% extends "layout.html" %}
+
+{% block title %}
+    Report Sick
+{% endblock %}
+
+{% block main %}
+    <form action="/report" method="post">
+        <input type="submit" class="btn btn-primary"name="submit_button" value="Report Sick">
+ 
+    </form>
+{% endblock %}

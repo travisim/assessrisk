@@ -1,0 +1,113 @@
+.bg-light
+{
+    background-color: #0f0f0f;
+    color: white;
+}
+nav .navbar-brand
+{
+    /* size for brand */
+    font-size: xx-large;
+    text-shadow: 2px 2px 9px grey;
+     
+}
+
+    nav .navbar-brand .red
+    {
+        color: #ea433b;
+        opacity: 0.9;
+        
+    }
+    nav .navbar-brand .black
+    {
+        
+        opacity: 0.9;
+        font-size: xxx-large
+    }
+header
+{
+    text-align: center;
+}
+
+nput[type=submit]:hover {
+  background-color: #ff0000;
+}
+.alert {
+  padding: 12px;
+  border-radius: 3px;
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+  border-width: 5px;
+  border-style: solid;
+  margin-left: 80px;
+}
+
+    .alert-error {
+      border-color: darkred;
+      background-color: red;
+      color: white;
+    }
+    
+    .alert-sucess {
+      border-color: darkgreen;
+      background-color: green;
+      color: white;
+      
+    }
+
+
+body
+{
+    background-color: #303030;
+    color: white;
+}
+
+main .form-control
+{
+    /* Center form controls */
+    display: inline-block;
+
+    /* Override Bootstrap's 100% width for form controls */
+    width: auto;
+    
+    
+    
+}
+
+main
+{
+    /* Scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* Center contents */
+    text-align: center;
+    
+    color: white;
+  
+ 
+    
+}
+.preference {
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+    margin: .5rem;
+}
+
+
+main img
+{
+    /* Constrain images on small screens */
+    max-width: 100%;
+}
+
+main table {
+    text-align: left;
+  
+}
+main tfoot{
+    font-weight: bold;
+}
+thead,tbody
+{
+    color:white;
+}

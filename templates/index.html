@@ -1,0 +1,80 @@
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Form
+{% endblock %}
+
+{% block main %}
+
+
+    <form action="/" method="post">
+        <div class="preference">
+            <input autocomplete="off" autofocus class="form-control" name="activity" placeholder="Activity" type="text">
+
+        </div>
+          <div class="preference">
+            <input autocomplete="off" autofocus class="form-control" name="water" placeholder="How much water drank?" type="text">
+            <label for="water" style="color:#dddddd;">(Provide value in ml)</label>
+        </div>
+            <div class="preference">
+            <input autocomplete="off" autofocus class="form-control" name="temp" placeholder="Temperature" type="text">
+            <label for="temp" style="color:#dddddd;">(Provide value in °C)</label>
+        </div>
+
+
+
+        <div class="preference">
+            <label for="q">1. I am feeling well today </label>
+            <input type="checkbox"  name="q" value="1"checked>
+        </div>
+        <div class="preference">
+            <label for="q">2. I had 7 hours of uninterrupted rest the night before </label>
+            <input type="checkbox"  name="q" value="2"checked>
+        </div>
+        <div class="preference">
+            <label for="q">3. I do not have any past medical history </label>
+            <input type="checkbox"  name="q" value="3"checked>
+        </div>
+        <div class="preference">
+            <label for="q">4. I am not recovering from an illness </label>
+            <input type="checkbox"  name="q" value="4"checked>
+        </div>
+        <div class="preference">
+            <label for="q">5. I am wearing my wrist band for medical tagging purposes </label>
+            <input type="checkbox"  name="q" value="5"checked>
+        </div>
+        <div class="preference">
+            <label for="q">6. I have taken temperature prior to any physical activity </label>
+            <input type="checkbox"  name="q" value="6"checked>
+        </div>
+        <div class="preference">
+            <label for="q">7. I have drank at least 500ml of water before the activity </label>
+              <input type="checkbox"  name="q" value="7"checked>
+        </div>
+        <div class="preference">
+            <label for="q">8. I did not miss any lesson before this activity </label>
+            <input type="checkbox"  name="q" value="8"checked>
+        </div>
+        <div class="preference">
+            <label for="q">9. The ground condition is not hazardous </label>
+            <input type="checkbox"  name="q" value="9"checked>
+        </div>
+        <div class="preference">
+            <label for="q">10. None of my personal equipment or weapon is giving me discomfort </label>
+            <input type="checkbox"  name="q" value="10"checked>
+        </div>
+        <div class="preference">
+            <label for="q">11. My buddy is with me </label>
+             <input type="checkbox"  name="q" value="11"checked>
+        </div>
+        <div class="preference">
+            <label for="q">12. My buddy has completed his RAC </label>
+            <input type="checkbox"  name="q" value="12"checked>
+        </div>
+
+
+
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Activity</th>
+                <th>Water/ml</th>
+                <th>Temperature/°C</th>
+                <th>q1</th>
+                <th>q2</th>
+                <th>q3</th>
+                <th>q4</th>
+                <th>q5</th>
+                <th>q6</th>
+                <th>q7</th>
+                <th>q8</th>
+                <th>q9</th>
+                <th>q10</th>
+                <th>q11</th>
+                <th>q12</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in history %}
+            <tr>
+                <td>{{i["activity"]}}</td>
+                <td>{{i["water"]}}</td>
+                <td>{{i["temp"]}}</td>
+                <td>{{i["q1"]}}</td>
+                <td>{{i["q2"]}}</td>
+                <td>{{i["q3"]}}</td>
+                <td>{{i["q4"]}}</td>
+                <td>{{i["q5"]}}</td>
+                <td>{{i["q6"]}}</td>
+                <td>{{i["q7"]}}</td>
+                <td>{{i["q8"]}}</td>
+                <td>{{i["q9"]}}</td>
+                <td>{{i["q10"]}}</td>
+                <td>{{i["q11"]}}</td>
+                <td>{{i["q12"]}}</td>
+            </tr>
+            {% endfor %}
+          
+        </tbody>
+    </table>
+{% endblock %}
