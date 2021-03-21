@@ -17,7 +17,7 @@ app = Flask(__name__)
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
 
-    
+
 # Ensure responses aren't cached
 @app.after_request
 def after_request(response):
@@ -39,11 +39,11 @@ Session(app)
 # Configure CS50 Library to use SQLite database
 #db = SQL("sqlite:///database.db")
 #or
-db = SQL(os.getenv("postgres://ydtirothohdged:b24506e627026dcd68cd1248ef30a7fdbc3931d5530b79e0f4bbfda19bf3b42f@ec2-54-155-208-5.eu-west-1.compute.amazonaws.com:5432/ddimat638f8iti"))
+db = SQL(os.getenv("postgres://olqqcvqhgevtmv:8bf40c6a649bbfdc954f42216a5bdf71c1f4f5842e308f71fd30449ae93b7b92@ec2-52-71-231-37.compute-1.amazonaws.com:5432/d87103joqnghkp"))
 
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-      
-        
+
+
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -57,44 +57,44 @@ def register():
         elif not request.form.get("password"):
             return apology("must provide password", 400)
         password = request.form.get("password")
-      
+
         length_error = len(password) < 8
         # searching for digits
         digit_error = re.search(r"\d", password) is None
-        
+
         # searching for uppercase
         uppercase_error = re.search(r"[A-Z]", password) is None
-        
+
         # searching for lowercase
         lowercase_error = re.search(r"[a-z]", password) is None
-        
+
         # searching for symbols
         symbol_error = re.search(r"[ !#$%&'()*+,-./[\\\]^_`{|}~" + r'"]', password) is None
-        
+
         # overall result
         password_ok = not (length_error or digit_error or uppercase_error or lowercase_error or symbol_error)
-        
+
         if password_ok == False:
             return apology("must satisfy password requirements", 400)
         elif not request.form.get("password"):
             return apology("must provide password", 403)
         elif request.form.get("password") != request.form.get("confirmation"):
             return apology("passwords must match",400)
-        
+
         try:
             k = db.execute("INSERT INTO users (username,hash) VALUES (?,?)",
             request.form.get("username"),
             generate_password_hash(request.form.get("password")))
-                
-        
+
+
         except:
             return apology("user exists already", 400)
-            
+
         if k is None:
             return apology("registration failed", 403)
         session["user_id"] = k
         return redirect("/")
-                
+
     else:
         return render_template("register.html")
 
@@ -113,11 +113,11 @@ def login():
         #Ensure username was submitted
         if not request.form.get("username"):
             return apology("must provide username", 403)
-        
+
         # Ensure password was submitted
         elif not request.form.get("password"):
             return apology("must provide password", 403)
-            
+
 
         # Query database for username
         rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
@@ -146,12 +146,12 @@ def logout():
 
     # Redirect user to login form
     return redirect("/")
-    #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 @app.route("/", methods=["GET", "POST"])
 @login_required
 def form():
     if request.method == "POST":
-     
+
         if not request.form.get("activity"):
             return apology("must provide activity", 400)
         if not request.form.get("water"):
@@ -162,14 +162,14 @@ def form():
         water = request.form.get("water")
         temp = request.form.get("temp")
         qlist = list(map(int, request.form.getlist("q")))
-      
-            
+
+
         for i in range(1,13,1):
             globals()["q" + str(i)]= "no"
         for i in qlist:
             globals()["q" + str(i)]= "yes"
         db.execute("""
-            INSERT INTO history(user_id,activity,water,temp,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10,q11,q12) 
+            INSERT INTO history(user_id,activity,water,temp,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10,q11,q12)
             VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
             session["user_id"],
             activity,
@@ -188,31 +188,31 @@ def form():
             q11,
             q12
         )
-        
-        
+
+
         flash("Form submitted","sucess")
         return  redirect("/")
     else:
         return render_template("index.html")
-    
-    
-      
-    
+
+
+
+
 @app.route("/report", methods=["GET", "POST"])
 @login_required
 def report():
     if request.method == "POST":
-     
-        
-         
+
+
+
         if request.form['submit_button'] != 'Report Sick':
             return apology("must provide activity", 400)
-        
+
         flash("Reported Sick","sucess")
         return  redirect("/")
     else:
         return render_template("report.html")
-    
+
 
 
 
@@ -237,13 +237,13 @@ def history():
     #for i in range(len(history)):
       # print(history[i]["q" + str(j)])
 
-       
-     
+
+
     return render_template("history.html",history = history)
-   
 
 
-  
+
+
 
 
 
