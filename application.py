@@ -39,8 +39,8 @@ Session(app)
 # Configure CS50 Library to use SQLite database
 #db = SQL("sqlite:///database.db")
 #or
-db = SQL(os.getenv("postgres://olqqcvqhgevtmv:8bf40c6a649bbfdc954f42216a5bdf71c1f4f5842e308f71fd30449ae93b7b92@ec2-52-71-231-37.compute-1.amazonaws.com:5432/d87103joqnghkp"))
-db = SQL(os.getenv("DATABASE_URL"))
+
+db = SQL(os.getenv("postgres://achtlrqqqaiqgm:4d7b65058a11bad8b096353521a569b1215ad8c16d13919dabcfb9e98c118e4c@ec2-54-197-228-62.compute-1.amazonaws.com:5432/d3gslbipeafm05"))
 
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
