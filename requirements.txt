@@ -4,4 +4,8 @@ Flask-Session
 requests
 gunicorn
 psycopg2
-Werkzeug == 0.16.0
+tempfile 
+werkzeug.exceptions 
+werkzeug.security 
+time
+re
