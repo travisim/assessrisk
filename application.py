@@ -40,6 +40,7 @@ Session(app)
 #db = SQL("sqlite:///database.db")
 #or
 db = SQL(os.getenv("postgres://olqqcvqhgevtmv:8bf40c6a649bbfdc954f42216a5bdf71c1f4f5842e308f71fd30449ae93b7b92@ec2-52-71-231-37.compute-1.amazonaws.com:5432/d87103joqnghkp"))
+db = SQL(os.getenv("DATABASE_URL"))
 
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
